@@ -1,5 +1,6 @@
 let quoteText = document.querySelector(".quote");
 let authorName = document.querySelector(".name");
+let soundBtn = document.querySelector(".sound");
 let quoteBtn = document.querySelector("button");
 
 // random quote function name
@@ -14,8 +15,15 @@ function randomQuote() {
     //   console.log(result);
     quoteText.innerText = result.content;
     authorName.innerText = result.author;
-    quoteBtn.innerText = "New Quote"
+    quoteBtn.innerText = "New Quote";
+    quoteBtn.classList.remove("loading")
     });
 }
+
+soundBtn.addEventListener("click", () => {
+  // SpeechSynthesisUtterance is a web speech api that represent a speech request
+  let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText}`) by (`${authorName.innerText}`);
+  speechSynthesis.speak(utterance) // speak method of speechSynthesis speak the utterance
+})
 
 quoteBtn.addEventListener("click", randomQuote);

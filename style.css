@@ -94,4 +94,7 @@ body {
   padding: 12px 22px;
   border-radius: 30px;
 }
-.features loading {}
+button.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
